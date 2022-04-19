@@ -37,3 +37,16 @@ function convertHexToRgb(hex) {
   const b = parseInt(strippedHex.substring(4), 16);
   return { r, g, b };
 }
+
+function convertRgbToHex(r, g, b) {
+  const firstPair = ("0" + r.toString(16)).slice(-2);
+  const secondPair = ("0" + g.toString(16)).slice(-2);
+  const thirdPair = ("0" + b.toString(16)).slice(-2);
+
+  const hex = "#" + firstPair + secondPair + thirdPair;
+  return hex;
+}
+
+slider.addEventListener("input", () => {
+  sliderText.innerText = `${slider.value}%`;
+});
