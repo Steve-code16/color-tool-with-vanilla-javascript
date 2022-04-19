@@ -5,6 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>color tool</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <main class="container">
+      <h1 class="title">Color Lighten/Darken</h1>
+      <label for="hex-color">Color (Hex)</label>
+      <input type="text" name="hex-color" id="hexInput" placeholder="#000000" />
+
+      <label for="slider" id="sliderText">0%</label>
+      <input
+        type="range"
+        name="slider"
+        id="slider"
+        value="0"
+        class="slider"
+        min="0"
+        max="100"
+      />
+
+      <p>Input Color</p>
+      <div class="box" id="inputColor"></div>
+      <p>Altered Color</p>
+      <div class="box" id="alteredColor"></div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
