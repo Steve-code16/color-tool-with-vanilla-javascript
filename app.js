@@ -3,6 +3,7 @@ const sliderText = document.getElementById("sliderText");
 const slider = document.getElementById("slider");
 const inputColor = document.getElementById("inputColor");
 const alteredColor = document.getElementById("alteredColor");
+const alteredColorText = document.getElementById("alteredColorText");
 
 function isHexValid(hex) {
   if (!hex) return false;
@@ -48,7 +49,13 @@ function convertRgbToHex(r, g, b) {
 }
 
 slider.addEventListener("input", () => {
+  const hex = hexInput.value;
+  if (!isHexValid(hex)) return;
+
   sliderText.innerText = `${slider.value}%`;
+
+  alteredColor.style.backgroundColor = alterColor(hex, slider.value);
+  alteredColorText.innerText = `Altered Color ${alterColor(hex, slider.value)}`;
 });
 
 function alterColor(hex, percentage) {
