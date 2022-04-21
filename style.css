@@ -46,3 +46,35 @@ input[type="text"] {
   background-color: #23f25a;
   margin-bottom: 1.3em;
 }
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.3em;
+}
+
+.toggle-btn {
+  width: 3.5em;
+  height: 2em;
+  margin: 0 0.8em;
+  background-color: #666;
+  border-radius: 2em;
+}
+
+.inner-circle {
+  width: 2em;
+  height: 2em;
+  background-color: #fff;
+  border: 4px solid #666;
+  border-radius: 50%;
+  transition: all 250ms;
+}
+
+.unselected {
+  opacity: 0.25;
+}
+
+.toggle-btn.toggled > .inner-circle {
+  transform: translateX(1.75em);
+  background-color: #333;
+}
