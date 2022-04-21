@@ -4,6 +4,9 @@ const slider = document.getElementById("slider");
 const inputColor = document.getElementById("inputColor");
 const alteredColor = document.getElementById("alteredColor");
 const alteredColorText = document.getElementById("alteredColorText");
+const toggleBtn = document.getElementById("toggleBtn");
+const lightenText = document.getElementById("lightenText");
+const darkenText = document.getElementById("darkenText");
 
 function isHexValid(hex) {
   if (!hex) return false;
@@ -74,3 +77,15 @@ const increaseWithin0To255 = (hex, amount) => {
   if (newHex < 0) return 0;
   return newHex;
 };
+
+toggleBtn.addEventListener("click", () => {
+  if (!toggleBtn.classList.contains("toggled")) {
+    toggleBtn.classList.add("toggled");
+    lightenText.classList.add("unselected");
+    darkenText.classList.remove("unselected");
+  } else {
+    toggleBtn.classList.remove("toggled");
+    lightenText.classList.remove("unselected");
+    darkenText.classList.add("unselected");
+  }
+});
