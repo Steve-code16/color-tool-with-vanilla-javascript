@@ -20,7 +20,8 @@ hexInput.addEventListener("keyup", () => {
   if (!isHexValid(hex)) return;
 
   const strippedHex = hex.replace("#", "");
-  inputColor.style.backgroundColor = "#" + hex;
+  inputColor.style.backgroundColor = "#" + strippedHex;
+  reset();
 });
 
 function convertHexToRgb(hex) {
@@ -94,4 +95,13 @@ toggleBtn.addEventListener("click", () => {
     lightenText.classList.remove("unselected");
     darkenText.classList.add("unselected");
   }
+  reset();
 });
+
+function reset() {
+  slider.value = 0;
+  sliderText.innerText = `${slider.value}%`;
+
+  alteredColor.style.backgroundColor = hexInput.value;
+  alteredColorText.innerText = `Altered Color ${hexInput.value}`;
+}
